@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Paste #{{ paste.id }}
+{% endblock title %}
+
+{% block content %}
+    <table>
+        <tr><td>Title</td><td>{{ paste.title }}</td></tr>
+        <tr><td>Permalink</td><td><a href="{% url detail paste.short %}">{% url detail paste.short %}</a></td></tr>
+        <tr><td>Date</td><td>{{ paste.timestamp|date:"N jS Y P"}}</td></tr>
+        <tr><td>Code</td><td>{{ paste.code }}</td></tr>
+    </table>
+{% endblock content %}
